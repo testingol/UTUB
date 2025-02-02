@@ -5,7 +5,7 @@ from pyrogram.types import (
     Message,
     CallbackQuery,
 )
-
+from pyrogram.enums import ChatAction
 from ..youtube import GoogleAuth
 from ..config import Config
 from ..translations import Messages as tr
@@ -39,7 +39,7 @@ def map_btns(pos):
     & Filters.user(Config.AUTH_USERS)
 )
 async def _help(c: UtubeBot, m: Message):
-    await m.reply_chat_action("chat_action_typing")
+    await m.reply_chat_action(ChatAction.TYPING)
     await m.reply_text(
         text=tr.HELP_MSG[1],
         reply_markup=InlineKeyboardMarkup(map_btns(1)),

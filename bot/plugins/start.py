@@ -1,6 +1,6 @@
 from pyrogram import filters as Filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-
+from pyrogram.enums import ChatAction
 from ..translations import Messages as tr
 from ..config import Config
 from ..utubebot import UtubeBot
@@ -13,7 +13,7 @@ from ..utubebot import UtubeBot
     & Filters.user(Config.AUTH_USERS)
 )
 async def _start(c: UtubeBot, m: Message):
-    await m.reply_chat_action("chat_action_typing")
+    await m.reply_chat_action(ChatAction.TYPING)
 
 
     await m.reply_text(

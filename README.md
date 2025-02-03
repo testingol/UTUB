@@ -120,6 +120,9 @@ Here's a YouTube tutorial video for deploying the bot on [Heroku](https://heroku
 
 You can contact me [@odysseusmax](https://telegram.dog/odysseusmax "odysseusmax").
 
+You can contact me [@AgainOwner](https://telegram.dog/AgainOwner "AgainOwner").
+
+
 ### License
 
 Code released under [GNU General Public License v3.0](LICENSE).

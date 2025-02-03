@@ -1,3 +1,6 @@
+"""
+Added by @AgainOwner
+"""
 import asyncio
 import io
 import os
@@ -95,12 +98,12 @@ def _parse_eval(value=None):
 
 async def evaluation_cmd_t(client: UtubeBot, message: Message):
     await message.reply_chat_action(ChatAction.TYPING)
-    user_id = message.from_user.id
-    status_message = await message.reply("__Processing eval pyrogram...__")
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
         return await status_message.edit("__No evaluate message!__")
+    user_id = message.from_user.id
+    status_message = await message.reply("__Processing eval pyrogram...__")
     exc = None
     with io.StringIO() as redirected_output, io.StringIO() as redirected_error:
         old_stderr, old_stdout = sys.stderr, sys.stdout

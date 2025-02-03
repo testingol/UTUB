@@ -13,7 +13,7 @@ from typing import Optional
 from pprint import pprint
 from urllib.parse import quote, unquote
 from json.decoder import JSONDecodeError
-
+import wget
 from pyrogram import filters as Filters
 from pyrogram.types import (
     InlineKeyboardMarkup,
@@ -138,7 +138,7 @@ async def aexec(code, client, message):
             "async def __aexec(client, message):\n"
             + " import os\n"
             + " import wget\n"
-            + " message = event = e\n"
+            + " event = e = message\n"
             + " r = reply = message.reply_to_message\n"
             + " chat = message.chat.id\n"
             + " c = client\n"

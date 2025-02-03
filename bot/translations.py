@@ -53,3 +53,5 @@ class Messages:
     AUTH_FAILED_MSG = "Authentication failed\nDetails:{}"
 
     AUTH_DATA_SAVE_SUCCESS = "Successfully saved the given auth data!"
+    
+    EVAL_PRO = "Please provide some python code..."

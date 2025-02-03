@@ -1,3 +1,4 @@
+wget
 pyrogram
 tgcrypto
 httplib2

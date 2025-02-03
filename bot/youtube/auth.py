@@ -28,7 +28,7 @@ class GoogleAuth:
     REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
     API_SERVICE_NAME = "youtube"
     API_VERSION = "v3"
-
+    CLIENT_SECRET_FILE = "bot/client_secret.json"
     def __init__(self, CLIENT_ID: str, CLIENT_SECRET: str):
         self.flow = OAuth2WebServerFlow(
             CLIENT_ID, CLIENT_SECRET, self.OAUTH_SCOPE, redirect_uri=self.REDIRECT_URI

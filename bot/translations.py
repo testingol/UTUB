@@ -2,7 +2,9 @@ class Messages:
 
     START_MSG = (
         "Hi there {}.\n\nI'm Youtube Uploader Bot.You can use me to upload any telegram video to youtube "
-        "once you authorise me.You can know more from /help.\n\nThank you."
+        "once you authorise me.You can know more from /help.\n\nThank you.\n\n"
+        
+        "**Supported Commands**:\n /start - check im alive or not\n /eval - for some devz things\n /upload - reply as video to upload\n /authorise <code> - to authorise and start uploading."
     )
 
     HELP_MSG = [

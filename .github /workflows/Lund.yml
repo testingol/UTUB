@@ -1,0 +1,43 @@
+name: Sync to Hugging Face Hub
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "Your Name"
+
+      - name: Add Hugging Face Remote
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git remote add hf https://understanding:${HF_TOKEN}@huggingface.co/spaces/understanding/Youtu
+
+      - name: Push to Hugging Face Hub
+        run: |
+          git push hf main --force-with-lease
+
+      - name: Notify on Success
+        if: success()
+        uses: some-notification-action
+        with:
+          message: "Successfully synced to Hugging Face Hub for repository utube."
+      
+      - name: Notify on Failure
+        if: failure()
+        uses: some-notification-action
+        with:
+          message: "Failed to sync to Hugging Face Hub for repository utube."
